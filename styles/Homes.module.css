@@ -18,8 +18,43 @@
   border-radius: 10px;
 }
 
+.imgDiv {
+    width: 100%;
+    height: 300px; 
+}
 
+.homeImg {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px 6px 0 0;
+    border-bottom: solid black 5px;
+    object-fit: cover;
+}
 
+.textP {
+    text-align: center;
+
+}
+
+.infoDiv {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.infoItem {
+    display: flex;
+}
+
+.btnDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.Btn {
+    background-color: #8EA38F;
+    border-radius: 6px;
+    border: solid black 3px;
+}
 @media (max-width: 575px) {
   .homesBoxDiv{
     width: 300px;

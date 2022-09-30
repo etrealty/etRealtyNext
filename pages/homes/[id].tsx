@@ -60,7 +60,7 @@ const HomeInfo: NextPage<InferGetServerSidePropsType<typeof getServerSideProps >
     return (
         <div>
             <Head>
-                <title>HomeID</title>
+                <title>{thisH.listId}</title>
             </Head>
             <div className={styles.homeDiv}>
                 <div className={styles.imgDiv}>
