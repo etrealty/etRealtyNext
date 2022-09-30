@@ -1,16 +1,15 @@
 import { returnSingleHome } from "../../utils/returnSingleHome";
-import { GetServerSideProps } from 'next'
+import {InferGetServerSidePropsType, NextPage } from 'next'
 
-type Props = {
-    home: Object | any
-}
 
-const HomeInfo = ({ home }: Props  ) => {
+
+const HomeInfo = ({ home }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
     console.log(home)
 
 
     return (
         <div>
+            <p>single home info check console </p>
 
         </div>
     )
@@ -20,13 +19,15 @@ const HomeInfo = ({ home }: Props  ) => {
 export default HomeInfo;
 
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-    if(context == undefined) return
+export const getServerSideProps = async (context: any) => {
     if(context.params == undefined) return
     const { id } = context.params
     const home = await returnSingleHome(id)
-    if(home === undefined) return
-    return { props: {}
-        } 
+    if(home === undefined){
+        return
+    }
+    return {
+            props: { home }
+        }  
 
 }
