@@ -1,0 +1,33 @@
+.homeDiv {
+  display: flex;
+
+}
+
+.homesMainDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.homesBoxDiv {
+  border: solid black 3px;
+  width: 500px;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+
+
+
+@media (max-width: 575px) {
+  .homesBoxDiv{
+    width: 300px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .homesBoxDiv{
+    width: 800px;
+  }
+}
