@@ -1,7 +1,14 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { useSnapshot } from 'valtio'
+import { homeStore } from './_app'
+
+
+
 
 const Home: NextPage = () => {
+ 
+
   return (
     <div>
       <Head>
