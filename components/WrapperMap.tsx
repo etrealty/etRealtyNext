@@ -4,8 +4,8 @@ import React from 'react'
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
 const containerStyle = {
-  width: '400px',
-  height: '400px'
+  width: '800px',
+  height: '800px'
 };
 
 const center = {
@@ -40,7 +40,9 @@ function WrapperMap() {
         onUnmount={onUnmount}
       >
         { /* Child components, such as markers, info windows, etc. */ }
-        <></>
+        <>
+            
+        </>
       </GoogleMap>
   ) : <></>
 }

@@ -12,7 +12,12 @@ const SearchHomes = () => {
     return(
         <div>
             <h2>Map</h2>
-            <WrapperMap />
+            <div style={{display: 'flex'}}>
+                <WrapperMap />
+                <div>
+                    <h2> homes go here</h2>
+                </div>
+            </div>
         </div>
     )
 
