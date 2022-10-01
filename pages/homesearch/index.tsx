@@ -1,4 +1,4 @@
-
+import WrapperMap from "../../components/WrapperMap";
 
 
 // this is a temp fix for google maps until the official google maps reeact wrapper is fixed 
@@ -12,6 +12,7 @@ const SearchHomes = () => {
     return(
         <div>
             <h2>Map</h2>
+            <WrapperMap />
         </div>
     )
 
