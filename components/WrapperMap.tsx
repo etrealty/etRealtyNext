@@ -1,4 +1,7 @@
+// this is my backup map UI components
+//
 // this is a temp fix library for official google maps library
+
 
 import React from 'react'
 import { GoogleMap, useJsApiLoader, MarkerF, InfoWindow, Marker } from '@react-google-maps/api';

@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react'
 import { Wrapper, Status } from '@googlemaps/react-wrapper'
 import Map from '../../components/Map'
-
+import styles from '../../styles/MapPage.module.css'
 
 
 // bug is keeping this from working  googlemaps/react-wrapper issue #542
@@ -19,11 +19,12 @@ const Search = () => {
 
 
     return (
-        <div style={{ height: '100vh', width: '100vw' }}>
+        <div className={styles.pageDiv}>
             <Wrapper apiKey={process.env.NEXT_PUBLIC_GOOGLEAPI!} render={render}> 
                 <Map center={center} zoom={4} />
             </Wrapper>
             <div className='homes'>
+                <p>Home list will be here</p>
             </div>
         
         </div>
