@@ -4,12 +4,11 @@ import HomeCard from '../../components/HomeCard';
 import { GetServerSideProps } from 'next'
 import { fetchHomesDefault } from '../../utils/fetchHomesDefault';
 import { type H } from '../../utils/houseType'  
-// going to hide this and use googles official react wrapper for their maps
-// I'm gonna keep it incase i need it for emergency UI
-//
-// this is a temp fix for google maps until the official google maps reeact wrapper is fixed 
-// and everything is working properly for react 18
 
+
+// change the way the selected home is displayed
+// add a div around the homecard and have it highlighted if the house is selected
+// instead of passing the selected boolean into the home card
 
 const SearchHomes = ({ homes }: any) => {
     const [selectedHome, setSelectedHome] = useState<H | undefined>()
