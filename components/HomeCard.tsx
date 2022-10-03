@@ -7,21 +7,24 @@ import Link from 'next/link'
 import { type H } from '../utils/houseType'
 
 type CompProps = {
-    home: H 
+    home: H
+    selected?: boolean
 }
 
 
-const HomeCard = ({ home }: CompProps) => {
+const HomeCard = ({ home, selected }: CompProps) => {
 
 
 
     return (
+        <>
+        {selected && <h2>You clicked this house on the map</h2> }
         <div className={styles.homesBoxDiv}>
             <div className={styles.imgDiv}>
                 <img className={styles.homeImg} src={home.photos[0].href} />
             </div> 
             <p className={styles.textP}>
-                {home.permLink.slice(1, home.permLink.lastIndexOf('MO') +2).replaceAll('-', ' ').replaceAll('_', '')}
+                {home.permLink.slice(0, home.permLink.lastIndexOf('MO') +2).replaceAll('-', ' ').replaceAll('_', '')}
             </p>
             <p className={styles.textP}>
                 Date Listed: {format(new Date(home.listDate), 'MM-dd-yyyy')}
@@ -63,6 +66,7 @@ const HomeCard = ({ home }: CompProps) => {
                 
             
         </div>
+        </>
     )
 
 
