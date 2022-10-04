@@ -18,7 +18,6 @@ const HomeCard = ({ home, selected }: CompProps) => {
 
     return (
         <>
-        {selected && <h2>You clicked this house on the map</h2> }
         <div className={styles.homesBoxDiv}>
             <div className={styles.imgDiv}>
                 <img className={styles.homeImg} src={home.photos[0].href} />

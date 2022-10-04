@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import WrapperMap from "../../components/WrapperMap";
-import HomeCard from '../../components/HomeCard';
+import HomeCardList from '../../components/HomeCardList';
 import { GetServerSideProps } from 'next'
 import { fetchHomesDefault } from '../../utils/fetchHomesDefault';
 import { type H } from '../../utils/houseType'  
@@ -14,7 +14,7 @@ const SearchHomes = ({ homes }: any) => {
     const [selectedHome, setSelectedHome] = useState<H | undefined>()
     console.log('homes from SSR', homes)
     console.log('selected home ====>', selectedHome) 
-
+    let selected = false
     return(
         <div>
             <h2>Map</h2>
@@ -22,8 +22,9 @@ const SearchHomes = ({ homes }: any) => {
                 <WrapperMap setSelectedHome={setSelectedHome} homes={homes} />
                 <div>
                     <h2> homes go here</h2>
-                    {homes.map((home: H, index: number)=> {
-                            let selected = false
+                    <HomeCardList homes={homes} selected={selected} />
+{/*                    {homes.map((home: H, index: number)=> {
+                            
                             if(selectedHome?.listId === home.listId){
                                 selected = true
                             }
@@ -31,6 +32,7 @@ const SearchHomes = ({ homes }: any) => {
                             <HomeCard home={home} selected={selected} key={index}/>
                         )
                         })}
+  */}
                 </div>
             </div>
         </div>
