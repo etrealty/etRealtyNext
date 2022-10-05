@@ -22,7 +22,7 @@ const SearchHomes = ({ homes }: any) => {
                 <WrapperMap setSelectedHome={setSelectedHome} homes={homes} />
                 <div>
                     <h2> homes go here</h2>
-                    <HomeCardList homes={homes} selected={selected} />
+                    <HomeCardList homes={homes} selected={selectedHome} />
 {/*                    {homes.map((home: H, index: number)=> {
                             
                             if(selectedHome?.listId === home.listId){

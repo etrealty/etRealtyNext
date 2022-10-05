@@ -28,6 +28,33 @@ const HomeCard = ({ home, selected }: CompProps) => {
             <p className={styles.textP}>
                 Date Listed: {format(new Date(home.listDate), 'MM-dd-yyyy')}
             </p>
+            {selected ?
+            <div className={styles.infoDiv} style={{backgroundColor: 'silver'}}>
+                <div className={styles.infoItem}>
+                    <p>
+                        {home.description.beds}
+                    </p>
+                   <GiBed style={{ fontSize: '26px', marginLeft: '5px', marginTop: '10px'}} />
+                </div>
+                <div className={styles.infoItem}>
+                    <p>
+                        {home.description.baths}
+                    </p>
+                   <GiBathtub style={{ fontSize: '20px', marginLeft: '5px', marginTop: '10px'}} />
+                </div>
+                <div className={styles.infoItem}>
+                    <p>
+                        {home.description.sqft}
+                    </p>
+                    <MdSquareFoot style={{  fontSize: '20px', marginLeft: '5px', marginTop: '14px' }} />
+                </div>
+                <div>
+                    <p>
+                        ${home.listPrice}
+                    </p>
+                </div>
+            </div>
+            : 
             <div className={styles.infoDiv}>
                 <div className={styles.infoItem}>
                     <p>
@@ -53,6 +80,7 @@ const HomeCard = ({ home, selected }: CompProps) => {
                     </p>
                 </div>
             </div>
+            }
             <div className={styles.btnDiv}>
                 <p>
                     <Link href={`homes/${home.listId}`}> 
