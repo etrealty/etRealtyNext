@@ -10,7 +10,7 @@ const Navbar = () => {
         <Link href='/'>
           <div style={{display: 'flex'}}>
           <GiFamilyHouse style={{fontSize: '48px'}} />
-          <p style={{fontSize: '12px'}}>ET Realty</p>
+          <p style={{fontSize: '12px'}}>Homeland Realty</p>
           </div>
         </Link>
       </div>

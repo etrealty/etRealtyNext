@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useSnapshot } from 'valtio'
-import { homeStore } from './_app'
+import Welcome from '../components/Welcome'
 
 
 
@@ -18,7 +17,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main style={{height: '100vh'}}>
-        This is the home page 
+        <Welcome />
       </main>
     </div>
   )
