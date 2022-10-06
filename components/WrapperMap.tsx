@@ -43,12 +43,12 @@ function WrapperMap({ setSelectedHome, homes }: any) {
   const fixMarkers = initialMarkers.filter((m: any) => m !== null)
 //console.log('initialMARKER =>', fixMarkers)
 
-  const markerClicked = (marker: any, index: any) => {
+  const markerClicked = (marker: any, index: any, ) => {
     setActiveInfoWindow(index)
     const clickHome = homes.filter((h: any)=> h.location.address.line === marker.label.text)
     //console.log('clickhome=>',clickHome[0].permalink)
     setSelectedHome(clickHome[0])
-    console.log('clickhome is ==>',clickHome)
+    //console.log('clickhome is ==>',clickHome)
     //console.log('markerClicked, house =>', marker.label.text)
     //console.log('marker',marker,'index',index)
   }
@@ -66,8 +66,9 @@ function WrapperMap({ setSelectedHome, homes }: any) {
 
 
   const onLoad = useCallback(function callback(map: any) {
-    const bounds = new window.google.maps.LatLngBounds(center);
-    map.fitBounds(bounds);
+ // const bounds = new window.google.maps.LatLngBounds(center);
+ // map.fitBounds(bounds);
+    map.setZoom(14)
     setMap(map)
     console.log('do work for markers now and here')
     setMarkers(fixMarkers)
@@ -86,9 +87,10 @@ function WrapperMap({ setSelectedHome, homes }: any) {
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={11}
+        zoom={13}
         onLoad={onLoad}
         onUnmount={onUnmount}
+        options={options}
       >
         { /* Child components, such as markers, info windows, etc. */ }
         <>

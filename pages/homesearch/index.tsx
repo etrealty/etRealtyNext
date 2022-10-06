@@ -3,7 +3,8 @@ import WrapperMap from "../../components/WrapperMap";
 import HomeCardList from '../../components/HomeCardList';
 import { GetServerSideProps } from 'next'
 import { fetchHomesDefault } from '../../utils/fetchHomesDefault';
-import { type H } from '../../utils/houseType'  
+import { type H } from '../../utils/houseType' 
+import ScrollToTop from 'react-scroll-to-top';
 
 
 // change the way the selected home is displayed
@@ -14,27 +15,17 @@ const SearchHomes = ({ homes }: any) => {
     const [selectedHome, setSelectedHome] = useState<H | undefined>()
     console.log('homes from SSR', homes)
     console.log('selected home ====>', selectedHome) 
-    let selected = false
     return(
         <div>
-            <h2>Map</h2>
-            <div style={{display: 'flex'}}>
+            <h2 style={{textAlign: 'center'}}>Find your future home.</h2>
+            <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
                 <WrapperMap setSelectedHome={setSelectedHome} homes={homes} />
-                <div>
-                    <h2> homes go here</h2>
+                <div style={{ marginLeft: '40px', marginRight: '10px'}}>
+                    <h2 style={{textAlign: 'center'}}> All Homes</h2>
                     <HomeCardList homes={homes} selected={selectedHome} />
-{/*                    {homes.map((home: H, index: number)=> {
-                            
-                            if(selectedHome?.listId === home.listId){
-                                selected = true
-                            }
-                        return (
-                            <HomeCard home={home} selected={selected} key={index}/>
-                        )
-                        })}
-  */}
                 </div>
             </div>
+            <ScrollToTop smooth />
         </div>
     )
 

@@ -7,7 +7,7 @@ const About = () => {
     <Head>
       <title>About</title>
     </Head>
-    <div>
+    <div style={{height: '100vh'}}>
       <h1>About Page</h1>
       <p>ETrealty is here to help you find your new home, or sell your current home. We will provide you with the knowledge and skills you need for a succesfull real estate experience</p>
     </div>
