@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Slideshow from '../components/Slideshow';
 import Welcome from '../components/Welcome'
 
 
@@ -16,8 +17,11 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main style={{height: '100vh'}}>
+      <main style={{height: '100%'}}>
         <Welcome />
+        <div style={{height: '70%', width: '80%', margin: 'auto'}}>
+            <Slideshow />
+        </div>
       </main>
     </div>
   )
