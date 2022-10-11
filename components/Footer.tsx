@@ -6,7 +6,7 @@ const Footer = () => {
 
   return (
     <div className={styles.Footer}>
-      Footer Info
+      © HomelandRealty 2022
     </div>
   )
 }
