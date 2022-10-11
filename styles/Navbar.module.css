@@ -16,13 +16,15 @@
   color: black;
 }
 
-.link:hover {
-    background-color: white;
+.link {
+    margin-left: 20px;
+    cursor: pointer;
 }
 
-.links a {
-  margin-left: 20px;
+.link:hover {
+    font-weight: bold;
 }
+
 
 .logoDiv {
   align-self: center;
