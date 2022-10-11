@@ -1,7 +1,7 @@
 const Welcome = () => {
 
     return (
-        <div>
+        <div style={{background: '#DDE3DD'}}>
             <h1 style={{textAlign: 'center'}}>
                 Welcome to Homeland Realty!
             </h1>

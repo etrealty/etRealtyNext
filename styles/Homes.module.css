@@ -12,15 +12,19 @@
 }
 
 .homesBoxDiv {
+  background-color: #576D62;
   border: solid black 1px;
   width: 500px;
   margin-top: 30px;
   border-radius: 10px;
+  transition: all 0.2s ease-in-out;
 }
 
 .homesBoxDiv:hover {
-    border: solid black 3px;
+    transform: scale(1.02, 1.02);
+    box-shadow: 5px 5px black;
 }
+
 
 .imgDiv {
     width: 100%;
