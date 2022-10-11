@@ -19,7 +19,7 @@ const Home: NextPage = () => {
 
       <main style={{height: '100%'}}>
         <Welcome />
-        <div style={{height: '70%', width: '80%', margin: 'auto'}}>
+        <div style={{height: '70%', width: '80%', margin: 'auto', marginBottom: '90px'}}>
             <Slideshow />
         </div>
       </main>

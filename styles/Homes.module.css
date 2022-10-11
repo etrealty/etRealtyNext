@@ -12,10 +12,14 @@
 }
 
 .homesBoxDiv {
-  border: solid black 3px;
+  border: solid black 1px;
   width: 500px;
   margin-top: 30px;
   border-radius: 10px;
+}
+
+.homesBoxDiv:hover {
+    border: solid black 3px;
 }
 
 .imgDiv {

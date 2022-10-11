@@ -12,7 +12,6 @@ const Slideshow = () => {
         "/slideshow/home4.jpg",
         "/slideshow/home5.jpg",
     ]
-      //  <div style={{height: '500px', width:'75%', margin:'auto', border: 'solid black 1px'}}>
 
     return (
             <Swiper

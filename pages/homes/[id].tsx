@@ -58,7 +58,7 @@ const HomeInfo: NextPage<InferGetServerSidePropsType<typeof getServerSideProps >
 
 
     return (
-        <div>
+        <div style={{height: '100vh'}}>
             <Head>
                 <title>{thisH.listId}</title>
             </Head>
