@@ -62,6 +62,7 @@
     background-color: #8EA38F;
     border-radius: 6px;
     border: solid black 3px;
+    cursor: pointer;
 }
 @media (max-width: 575px) {
   .homesBoxDiv{
