@@ -1,9 +1,16 @@
 import axios from 'axios'
+import { type H } from './houseType';
 
+let apiURL="https://etrealty-api-6ca9l.ondigitalocean.app/"
 
 export const fetchHomesDefault = async () => {
-    const { data } = await axios.get('http://localhost:7050/mls')
+    const { data } = await axios.get(apiURL + "api/all")
 
-    return data.homes.data.home_search.results
+    const properties: H[] = data.properties.map((property: H) => {
+        return property
+         
+    }) 
+
+    return properties
  
 }

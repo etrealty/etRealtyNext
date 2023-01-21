@@ -1,31 +1,31 @@
 export type H = {
-    description: {
-        baths: number | string | null
-        beds: number | string | null
-        garage: number | string | null
-        lot_sqft: number | string | null
-        sqft: number | string | null
-        type: string | null | null
-        year_built: number | string | null
-    }
-    listDate: string
-    listPrice: number
-    listId: string
-    location: {
-        address: {
-            line: string
-            city: string
-            postal_code: string
-            state_code: string
-        }
-        county: {
-            name: string
-        }
-    }
-    permLink: string
-    photos: [{
-        href: string    
-    }]
-    
+  Address: String | null,
+  ApiUpdateAt: String | null,
+  Baths: Number | null,
+  BathsFull: Number | null,
+  BathsHalf: Number | null,
+  Beds: Number | null,
+  Branding: String | null,
+  City: String | null,
+  County: String | null,
+  Garage: Number | null,
+  Latitude: Number | null,
+  ListDate: String | null,
+  ListPrice: Number | null,
+  ListingId: String | null,
+  Longitude: Number | null,
+  LotSqft: Number | null,
+  PermLink: String | null,
+  Photos: String[] | null,
+  PostalCode: String | null,
+  PropertyId: String | null,
+  PropertyType: String | null,
+  Sqft: Number | null,
+  State: String | null,
+  StateCode: String | null,
+  Status: String | null,
+  Stories: Number | null,
+  Tags: String[] | null,
+  YearBuilt: Number | null,
 }
 
