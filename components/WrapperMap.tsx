@@ -5,6 +5,7 @@
 
 import React, { useState, useCallback } from 'react'
 import { GoogleMap, useJsApiLoader, MarkerF, InfoWindow } from '@react-google-maps/api';
+import { type H } from '../utils/houseType';
 
 const containerStyle = {
   width: '50%',
@@ -27,15 +28,15 @@ function WrapperMap({ setSelectedHome, homes }: any) {
     streetViewControl: false
   }
 
-  const initialMarkers = homes.map((h: any)=> 
+  const initialMarkers = homes.map((h: H)=> 
   {  
-      if(h?.location?.address?.coordinate?.lat === undefined) return null
+      if(h === undefined) return null
       return { 
         position: {
-            lat: h?.location?.address?.coordinate?.lat,
-            lng: h?.location?.address?.coordinate?.lon
+            lat: h.Latitude,
+            lng: h.Longitude
         },
-        label: { color: 'black', text: h.location.address.line },
+        label: { color: 'black', text: h.Address },
         draggable: false
      }
   
@@ -45,7 +46,7 @@ function WrapperMap({ setSelectedHome, homes }: any) {
 
   const markerClicked = (marker: any, index: any, ) => {
     setActiveInfoWindow(index)
-    const clickHome = homes.filter((h: any)=> h.location.address.line === marker.label.text)
+    const clickHome = homes.filter((h: H)=> h.Address === marker.label.text)
     //console.log('clickhome=>',clickHome[0].permalink)
     setSelectedHome(clickHome[0])
     //console.log('clickhome is ==>',clickHome)

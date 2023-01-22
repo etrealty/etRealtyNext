@@ -1,92 +1,47 @@
-import { returnSingleHome } from "../../utils/returnSingleHome";
-import { GetServerSidePropsContext, InferGetServerSidePropsType, NextPage } from 'next'
+import { returnSingleHome } from "../../utils/fetchSingleHome";
+import { GetServerSidePropsContext, GetServerSideProps, InferGetServerSidePropsType, NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../../styles/HomeId.module.css'
 import format from 'date-fns/format'
-
-
-type H = {
-    description: {
-        baths: number | string | null
-        beds: number | string | null
-        garage: number | string | null
-        lot_sqft: number | string | null
-        sqft: number | string | null
-        type: string | null | null
-        year_built: number | string | null
-    }
-    listDate: string
-    listPrice: number
-    listId: string
-    location: {
-        address: {
-            line: string
-            city: string
-            postal_code: string
-            state_code: string
-        }
-        county: {
-            name: string
-        }
-    }
-    permLink: string
-    photos: [{
-        href: string    
-    }]
-    
-}
-
-
-type PageProps = {
-    home: {}
-}
+import { type H } from '../../utils/houseType';
 
 
 
 
-const HomeInfo: NextPage<InferGetServerSidePropsType<typeof getServerSideProps >> = ({ home }) => {
-    console.log(home)
-    const thisH: H = {
-        description: home['description'],
-        listDate: home['list_date'],
-        listPrice: home['list_price'],
-        listId: home['listing_id'],
-        location: home['location'],
-        permLink: home['permalink'],
-        photos: home['photos']
-    }
-
+const HomeInfo = ({ property }: any) => {
+    console.log(property)
+    const home: H = property;
 
     return (
         <div style={{height: '100vh'}}>
             <Head>
-                <title>{thisH.listId}</title>
+                <title>{home.ListingId}</title>
             </Head>
             <div className={styles.homeDiv}>
                 <div className={styles.imgDiv}>
-                    <img className={styles.homeImg} src={thisH.photos[0].href} /> 
+                    <img className={styles.homeImg} src={home.Photos !== null ? home.Photos[0] : ' '} /> 
                 </div>
                 <div>
                     <p>
-                        Address: {thisH.location.address.line}, {thisH.location.address.city}, {thisH.location.address.postal_code}, {thisH.location.address.state_code}
+                        Address: {home.Address}, {home.City}, {home.PostalCode}, {home.State}
                     </p>
                     <p>
-                        Bedrooms: {thisH.description.beds}
+                        Bedrooms: {home.Beds}
                     </p>
                     <p>
-                        Baths: {thisH.description.baths}
+                        Baths: {home.Baths}
                     </p>
                     <p>
-                        Sqft: {thisH.description.sqft}
+                        Sqft: {home.Sqft}
                     </p>
                     <p>
-                        Lot Size: {thisH.description.lot_sqft} SqFt
+                        Lot Size: {home.LotSqft} SqFt
                     </p>
                     <p>
-                        Date Listed: {format(new Date(thisH.listDate), 'MM/dd/yyy')}
+                        Date Listed: {format(new Date(home.ListDate !== null ? home.ListDate : '01/01/2001'), 'MM/dd/yyy')}
                     </p>
                     <p>
-                        List Price: ${thisH.listPrice}
+                        List Price: ${home.ListPrice}
                     </p>
                 </div>
 
@@ -100,15 +55,17 @@ const HomeInfo: NextPage<InferGetServerSidePropsType<typeof getServerSideProps >
 export default HomeInfo;
 
 
-export const getServerSideProps = async (context: GetServerSidePropsContext) => {
-    if(context.params == undefined) return
-    const { id } = context.params
-    const home: Object = await returnSingleHome(id)
-    if(home === undefined){
+export const getServerSideProps = async ({params}: GetServerSidePropsContext) => {
+    if(params == undefined) return
+    const id = params.id as string;
+    const property: H = await returnSingleHome(id) 
+    if(property === undefined){
         return
     }
     return {
-            props: { home }
+            props: {
+                property
+            }
         }  
 
 }

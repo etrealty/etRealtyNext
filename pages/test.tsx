@@ -1,11 +1,12 @@
 import Head from "next/head";
 import { fetchHomesDefault } from '../utils/fetchHomesDefault';
+import { returnSingleHome } from '../utils/fetchSingleHome';
 import { GetServerSideProps } from 'next'
 import { InferGetServerSidePropsType } from 'next'
 import { type H } from '../utils/houseType'
 
-const Test = ({ houses }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-  console.log(houses);
+const Test = ({ house }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+  console.log(house);
 
   return (
    <div>
@@ -23,13 +24,16 @@ const Test = ({ houses }: InferGetServerSidePropsType<typeof getServerSideProps>
 export default Test;
 
 
-export const getServerSideProps: GetServerSideProps<{ houses: H[] }> = async () => {
-    const houses: H[] = await fetchHomesDefault() 
+export const getServerSideProps: GetServerSideProps<{ house: H }> = async () => {
+    // const houses: H[] = await fetchHomesDefault() 
 
+    const id = "8362389149"
+    const house: H = await returnSingleHome(id);
 
     return {
         props: {
-            houses
+            //houses,
+            house
         }
     }
 }
