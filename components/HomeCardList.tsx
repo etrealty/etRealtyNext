@@ -18,7 +18,7 @@ const HomeCardList = ({ homes, selected }: CompProps) => {
     // console.log('SELECTED INDEX', selectedIndex)
     useEffect(() => {
         console.log('INDEX LIST REF',indexListRef)
-        const findRef = indexListRef.current.filter((obj: any) => obj.homeId === selected?.listId)
+        const findRef = indexListRef.current.filter((obj: any) => obj.homeId === selected?.PropertyId)
         if(findRef) {
             const idx: number[] = findRef.map((ref: any) => {
                 const num: number = ref.ind
@@ -36,11 +36,11 @@ const HomeCardList = ({ homes, selected }: CompProps) => {
             {homes.map((home: H, index: number) => {
                 // set the list of indexes for the refs
                 let selectedHome = false
-                const listCheck = indexListRef.current.find((ref: any) => ref.homeId === home.listId)
+                const listCheck = indexListRef.current.find((ref: any) => ref.homeId === home.PropertyId)
                 if(listCheck == undefined){
-                    indexListRef.current.push({homeId: home.listId, ind: index})
+                    indexListRef.current.push({homeId: home.PropertyId, ind: index})
                 }
-                if(selected?.listId === home.listId){
+                if(selected?.PropertyId === home.PropertyId){
                     selectedHome = true
                 }
                 // return the homecard and div
