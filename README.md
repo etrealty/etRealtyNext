@@ -2,8 +2,9 @@
 ## next.js
 ### jest for test runner
 ### Created an API for all Propetry data
-### API will update every day twice a day
-
+### Hosted on DigitalOcean
+### API will update every 3 hours
+### TypeScript is #1
 
 > All home data is sourced from the Rapid API US Real Estate API
 
