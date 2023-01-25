@@ -37,6 +37,9 @@ const HomeInfo = ({ property }: any) => {
                     <img className={styles.homeImg} src={home.Photos !== null ? home.Photos[0] : ' '} /> 
                 </div>
                 <div>
+                    <div className={styles.descriptionDiv}>
+
+                    </div>
                     <p>
                         Address: {home.Address}, {home.City}, {home.PostalCode}, {home.State}
                     </p>
