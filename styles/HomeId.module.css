@@ -4,6 +4,31 @@
     align-items: center;
 }
 
+.titleDiv {
+    margin-top: 15px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.addressDiv {
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.city {
+    margin-right: 6px;
+}
+
+.statecode {
+    margin-right: 6px;
+}
+
+.priceDiv {
+    margin-right: 50px;
+}
+
 .imgDiv {
   margin-top: 2rem;
   width: 600px;

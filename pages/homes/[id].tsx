@@ -18,6 +18,21 @@ const HomeInfo = ({ property }: any) => {
                 <title>{home.ListingId}</title>
             </Head>
             <div className={styles.homeDiv}>
+                <div className={styles.titleDiv}>
+                    <div className={styles.addressDiv}>
+                       <div>
+                           <span>{home.Address}</span>
+                       </div> 
+                       <div>
+                           <span className={styles.city}>{home.City}</span>
+                           <span className={styles.statecode}>{home.StateCode},</span>
+                           <span>{home.PostalCode}</span>
+                       </div>
+                    </div>
+                    <div className={styles.priceDiv}>
+                        <span>${home.ListPrice}</span>
+                    </div>
+                </div>
                 <div className={styles.imgDiv}>
                     <img className={styles.homeImg} src={home.Photos !== null ? home.Photos[0] : ' '} /> 
                 </div>
