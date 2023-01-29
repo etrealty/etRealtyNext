@@ -4,6 +4,7 @@ import Head from 'next/head'
 import styles from '../../styles/HomeId.module.css'
 import format from 'date-fns/format'
 import { type H } from '../../utils/houseType';
+import DescriptionBox from "../../components/DescriptionBox";
 
 
 
@@ -38,7 +39,7 @@ const HomeInfo = ({ property }: any) => {
                 </div>
                 <div>
                     <div className={styles.descriptionDiv}>
-
+                        <DescriptionBox home={home} />
                     </div>
                     <p>
                         Address: {home.Address}, {home.City}, {home.PostalCode}, {home.State}
