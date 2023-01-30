@@ -4,7 +4,7 @@
 ### Created an API for all Propetry data
 ### Hosted on DigitalOcean
 ### API will update every 3 hours
-### TypeScript is #1
+### TypeScript.
 
 > All home data is sourced from the Rapid API US Real Estate API
 
