@@ -30,7 +30,7 @@ export default function DescriptionBox({home}: any) {
                 break;
             case 4:
 
-                description = `Hurry, contact us to learn more about this ${home.Baths} bath ${home.Beds} bed home.`            
+                description = `Hurry and check out this ${home.Baths} bath ${home.Beds} bed home.`            
                 break;
             case 5:
 
