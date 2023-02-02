@@ -14,7 +14,7 @@ export default function DescriptionBox({home}: any) {
     }else {
         switch(pID) {
             case 0: 
-                description = `Check out this ${home.Beds} bed ${home.Baths} home!`            
+                description = `Look at this ${home.Beds} bed ${home.Baths} home!`            
                 break;
             case 1:
 
