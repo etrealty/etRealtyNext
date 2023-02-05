@@ -41,27 +41,29 @@ const HomeInfo = ({ property }: any) => {
                     <div className={styles.descriptionDiv}>
                         <DescriptionBox home={home} />
                     </div>
-                    <p>
-                        Address: {home.Address}, {home.City}, {home.PostalCode}, {home.State}
-                    </p>
-                    <p>
-                        Bedrooms: {home.Beds}
-                    </p>
-                    <p>
-                        Baths: {home.Baths}
-                    </p>
-                    <p>
-                        Sqft: {home.Sqft}
-                    </p>
-                    <p>
-                        Lot Size: {home.LotSqft} SqFt
-                    </p>
-                    <p>
-                        Date Listed: {format(new Date(home.ListDate !== null ? home.ListDate : '01/01/2001'), 'MM/dd/yyy')}
-                    </p>
-                    <p>
-                        List Price: ${home.ListPrice}
-                    </p>
+                    <div className={styles.infoBox}>
+                        <p>
+                            Address: {home.Address}, {home.City}, {home.PostalCode}, {home.State}
+                        </p>
+                        <p>
+                            Bedrooms: {home.Beds}
+                        </p>
+                        <p>
+                            Baths: {home.Baths}
+                        </p>
+                        <p>
+                            Sqft: {home.Sqft}
+                        </p>
+                        <p>
+                            Lot Size: {home.LotSqft} SqFt
+                        </p>
+                        <p>
+                            Date Listed: {format(new Date(home.ListDate !== null ? home.ListDate : '01/01/2001'), 'MM/dd/yyy')}
+                        </p>
+                        <p>
+                            List Price: ${home.ListPrice}
+                        </p>
+                    </div>
                 </div>
 
             </div>
