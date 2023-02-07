@@ -14,7 +14,7 @@ const HomeInfo = ({ property }: any) => {
     const home: H = property;
 
     return (
-        <div style={{height: '100vh'}}>
+        <div style={{height: '100%'}}>
             <Head>
                 <title>{home.ListingId}</title>
             </Head>
