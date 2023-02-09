@@ -24,9 +24,18 @@
 .infoBox {
     background-color: gray;
     border: solid 3px black;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
 
 }
 
+.descriptionDiv {
+    background: #8EA38F;
+    border: solid black 3px;
+    margin: 10px;
+    border-radius: 5px;
+}
 
 .city {
     margin-right: 6px;
