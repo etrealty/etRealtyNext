@@ -1,5 +1,5 @@
 import { returnSingleHome } from "../../utils/fetchSingleHome";
-import { GetServerSidePropsContext, GetServerSideProps, InferGetServerSidePropsType, NextPage } from 'next'
+import { GetServerSidePropsContext } from 'next'
 import Head from 'next/head'
 import styles from '../../styles/HomeId.module.css'
 import format from 'date-fns/format'
