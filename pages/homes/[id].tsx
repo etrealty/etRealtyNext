@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { returnSingleHome } from "../../utils/fetchSingleHome";
 import { GetServerSidePropsContext } from 'next'
 import Head from 'next/head'
@@ -15,11 +15,11 @@ const HomeInfo = ({ property }: any) => {
     const home: H = property;
     
     const [imgClicked, setImgClicked] = useState(false);
-
-    const handleClick = () => {
-       setImgClicked(!imgClicked); 
-
-    }
+    
+    const openImgView = useCallback(()=>{
+        setImgClicked(true);
+        //setCurrentImage(0);
+    }, []);
 
     return (
         <div style={{height: '100%'}}>
@@ -42,8 +42,8 @@ const HomeInfo = ({ property }: any) => {
                         <span>${home.ListPrice}</span>
                     </div>
                 </div>
-            <div onClick={()=>handleClick()} className={styles.imgDiv}>
-                    {imgClicked === true ? <ImgView images={home.Photos} cur={0} open={imgClicked}  /> : <p>PICTURE HERE</p>}
+            <div className={styles.imgDiv}>
+                    {imgClicked === true ? <ImgView images={home.Photos} cur={0} /> : <div><img className={styles.homeImg} src={home.Photos !== null ? home.Photos[0] : ' '} /></div>}
                     {/* original image view */}
                     {/*<img className={styles.homeImg} src={home.Photos !== null ? home.Photos[0] : ' '} /> */}
                 </div>

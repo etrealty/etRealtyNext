@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react';
 type ImgViewProps = {
     images: string[] | null,
     cur: number,
-    open: boolean
+   // open: boolean
 }
 
-export default function ImgView({images, cur, open}: ImgViewProps) {
+export default function ImgView({images, cur}: ImgViewProps) {
     
     const [curImg, setCurImg] = useState(0);
     const [isOpen, setIsOpen] = useState(false);
@@ -15,13 +15,15 @@ export default function ImgView({images, cur, open}: ImgViewProps) {
     
     useEffect(()=> {
         setCurImg(cur);
-        setIsOpen(open);
+        //setIsOpen(open);
     });
    
     const closeImgView = () => {
         setCurImg(0);
         setIsOpen(false);
     }
+
+
 
 
 
