@@ -42,7 +42,7 @@ const HomeInfo = ({ property }: any) => {
                         <span>${home.ListPrice}</span>
                     </div>
                 </div>
-                <div onClick={} className={styles.imgDiv}>
+            <div onClick={()=>handleClick()} className={styles.imgDiv}>
                     {imgClicked === true ? <ImgView images={home.Photos} cur={0} open={imgClicked}  /> : <p>PICTURE HERE</p>}
                     {/* original image view */}
                     {/*<img className={styles.homeImg} src={home.Photos !== null ? home.Photos[0] : ' '} /> */}
