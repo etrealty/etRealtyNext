@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { returnSingleHome } from "../../utils/fetchSingleHome";
 import { GetServerSidePropsContext } from 'next'
 import Head from 'next/head'
@@ -5,13 +6,20 @@ import styles from '../../styles/HomeId.module.css'
 import format from 'date-fns/format'
 import { type H } from '../../utils/houseType';
 import DescriptionBox from "../../components/DescriptionBox";
-
+import ImgView from '../../components/ImageViewer';
 
 
 
 const HomeInfo = ({ property }: any) => {
     console.log(property)
     const home: H = property;
+    
+    const [imgClicked, setImgClicked] = useState(false);
+
+    const handleClick = () => {
+       setImgClicked(!imgClicked); 
+
+    }
 
     return (
         <div style={{height: '100%'}}>
@@ -34,8 +42,10 @@ const HomeInfo = ({ property }: any) => {
                         <span>${home.ListPrice}</span>
                     </div>
                 </div>
-                <div className={styles.imgDiv}>
-                    <img className={styles.homeImg} src={home.Photos !== null ? home.Photos[0] : ' '} /> 
+                <div onClick={} className={styles.imgDiv}>
+                    {imgClicked === true ? <ImgView images={home.Photos} cur={0} open={imgClicked}  /> : <p>PICTURE HERE</p>}
+                    {/* original image view */}
+                    {/*<img className={styles.homeImg} src={home.Photos !== null ? home.Photos[0] : ' '} /> */}
                 </div>
                 <div>
                     <div className={styles.descriptionDiv}>
