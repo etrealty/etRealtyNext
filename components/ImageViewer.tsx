@@ -1,18 +1,19 @@
 import ImageViewer from "react-simple-image-viewer";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
 type ImgViewProps = {
     images: string[] | null,
     cur: number,
-   // open: boolean
+    open: Function
 }
 
-export default function ImgView({images, cur}: ImgViewProps) {
+export default function ImgView({images, cur, open}: ImgViewProps) {
     
     const [curImg, setCurImg] = useState(0);
     const [isOpen, setIsOpen] = useState(false);
     
     
+
     useEffect(()=> {
         setCurImg(cur);
         //setIsOpen(open);
@@ -20,7 +21,7 @@ export default function ImgView({images, cur}: ImgViewProps) {
    
     const closeImgView = () => {
         setCurImg(0);
-        setIsOpen(false);
+        open(false);
     }
 
 

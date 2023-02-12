@@ -16,6 +16,7 @@ const HomeInfo = ({ property }: any) => {
     
     const [imgClicked, setImgClicked] = useState(false);
     
+
     const openImgView = useCallback(()=>{
         setImgClicked(true);
         //setCurrentImage(0);
@@ -42,8 +43,8 @@ const HomeInfo = ({ property }: any) => {
                         <span>${home.ListPrice}</span>
                     </div>
                 </div>
-            <div className={styles.imgDiv}>
-                    {imgClicked === true ? <ImgView images={home.Photos} cur={0} /> : <div><img className={styles.homeImg} src={home.Photos !== null ? home.Photos[0] : ' '} /></div>}
+            <div onClick={openImgView} className={styles.imgDiv}>
+                    {imgClicked === true ? <ImgView images={home.Photos} cur={0} open={setImgClicked} /> : <div><img className={styles.homeImg} src={home.Photos !== null ? home.Photos[0] : ' '} /></div>}
                     {/* original image view */}
                     {/*<img className={styles.homeImg} src={home.Photos !== null ? home.Photos[0] : ' '} /> */}
                 </div>
