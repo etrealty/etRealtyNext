@@ -9,6 +9,7 @@ const About = () => {
     </Head>
     <div style={{minHeight: '200%' ,textAlign: 'center'}}>
       <h1>About Page</h1>
+      <img height={300} width={200} style={{borderRadius: '16px'}} src="https://res.cloudinary.com/dq6yyefdy/image/upload/v1676740978/homeland_reality-20_cvjkez.jpg" alt="realty team" />
       <p>ETrealty is here to help you find your new home, or sell your current home. We will provide you with the knowledge and skills you need for a succesfull real estate experience</p>
       <p> We pride ourselves in offering the best hometown realtor experience in Bates County.</p>
     </div>
