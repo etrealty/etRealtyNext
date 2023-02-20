@@ -1,5 +1,5 @@
 # ET Realty/ Homestead Realty
-## next.js
+## Next.js
 ### jest for test runner
 ### Created an API for all Propetry data
 ### Hosted on DigitalOcean
