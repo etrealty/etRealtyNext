@@ -56,11 +56,11 @@ const HomeInfo = ({ property }: any) => {
                         <p>
                             Address: {home.Address}, {home.City}, {home.PostalCode}, {home.State}
                         </p>
-                        <p>
-                            Bedrooms: {home.Beds}
+                        <p style={{display: 'flex', justifyContent: 'space-between'}}>
+                            <p>Bedrooms:</p> <p>{home.Beds}</p> 
                         </p>
-                        <p>
-                            Baths: {home.Baths}
+                        <p className={styles.infoTextBox}>
+                            <p>Baths:</p><p>{home.Baths}</p> 
                         </p>
                         <p>
                             Sqft: {home.Sqft}
