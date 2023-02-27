@@ -9,3 +9,15 @@
     background-color: #6f8e70;
 
 }
+
+.CCinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.CCinfo p {
+    margin: 8px;
+
+}
