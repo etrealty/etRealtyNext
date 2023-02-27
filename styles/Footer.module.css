@@ -1,8 +1,8 @@
 .Footer {
-    display: inline-block;
+    display: block;
     width: 100%;
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     background: #8EA38F;
     text-align: center;
     
