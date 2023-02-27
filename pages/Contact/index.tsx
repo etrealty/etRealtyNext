@@ -12,21 +12,20 @@ const Contact = () => {
           Contact
         </title>
       </Head>
-      <div style={{height: '100vh'}}>
-        <h1 style={{textAlign: 'center'}}>Contact Info</h1>
-        <h3 style={{textAlign: 'center'}}>
+      <div style={{height: '100%'}}>
+        <h2 style={{textAlign: 'center'}}>
             <u>Office</u>
-        </h3>
-        <h3 style={{textAlign: 'center'}}>
+        </h2>
+        <h4 style={{textAlign: 'center', margin: '10px'}}>
             816-297-1001
-        </h3>
-        <h3 style={{textAlign: 'center'}}>
+        </h4>
+        <h4 style={{textAlign: 'center', margin: '10px'}}>
             47 E Main St. Adrian MO, 64720 
-        </h3>
+        </h4>
         <br/>
         <br/>
         <h2 style={{textAlign: 'center'}}><u>Realtors</u></h2>
-        <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
+        <div className={styles.CardDiv}>
             <div className={styles.ContactCard}>
                 <img style={{borderRadius: '90px'}} src="https://res.cloudinary.com/dq6yyefdy/image/upload/w_150,h_150,c_fill,g_face,r_max/v1676740975/1homeland_reality-8_rhxnde.jpg" alt="E Tindle" />
                 <div className={styles.CCinfo}>

@@ -1,3 +1,10 @@
+
+.CardDiv {
+    display: flex; 
+    justify-content: space-evenly;
+}
+
+
 .ContactCard {
     border: solid black 1px;
     padding: 5px;
@@ -19,5 +26,21 @@
 
 .CCinfo p {
     margin: 8px;
+
+}
+
+
+@media (max-width: 700px) {
+    .CardDiv {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ContactCard {
+        width: 70%;
+        margin: auto;
+        margin-bottom: 10px;
+        overflow: hidden;
+    }
 
 }
