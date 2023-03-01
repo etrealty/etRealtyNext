@@ -16,7 +16,10 @@ const SearchHomes = ({houses}: InferGetServerSidePropsType<typeof getServerSideP
     console.log('homes from SSR', houses)
     console.log('selected home ====>', selectedHome) 
    
-   
+    
+    useEffect(()=>{},[selectedHome])
+
+
 
     return(
         <div style={{height: '100%'}}>
@@ -24,7 +27,6 @@ const SearchHomes = ({houses}: InferGetServerSidePropsType<typeof getServerSideP
             <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
                 <WrapperMap setSelectedHome={setSelectedHome} homes={houses} />
                 <div style={{ marginLeft: '40px', marginRight: '10px', overflow: 'hidden'}}>
-                    <h2 style={{textAlign: 'center'}}> All Homes</h2>
                     <HomeCardList homes={houses} selected={selectedHome} />
                 </div>
             </div>

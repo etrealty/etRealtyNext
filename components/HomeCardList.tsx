@@ -20,16 +20,16 @@ const HomeCardList = ({ homes, selected }: CompProps) => {
     
 
     useEffect(() => {
-        console.log('INDEX LIST REF',indexListRef)
+        //console.log('INDEX LIST REF',indexListRef)
         const findRef = indexListRef.current.filter((obj: any) => obj.homeId === selected?.PropertyId)
         if(findRef) {
             const idx: number[] = findRef.map((ref: any) => {
                 const num: number = ref.ind
                 return num
             })
-            console.log('Selected FINDREFFF---->>>', findRef)
+            //console.log('Selected FINDREFFF---->>>', findRef)
             const curRef = refs.current.find((ref: any, index: number) => index === idx[0] )
-            console.log("CURRENT REF TO HIGLIGHT ===>>>", curRef) 
+            //console.log("CURRENT REF TO HIGLIGHT ===>>>", curRef) 
             curRef?.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest"})
         }
     }, [selected])
