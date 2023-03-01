@@ -5,8 +5,7 @@ import { GetServerSideProps } from 'next'
 import { InferGetServerSidePropsType } from 'next'
 import { fetchHomesDefault } from '../../utils/fetchHomesDefault';
 import { type H } from '../../utils/houseType' 
-import ScrollToTop from 'react-scroll-to-top';
-
+import { useEffect } from 'react';
 
 // change the way the selected home is displayed
 // add a div around the homecard and have it highlighted if the house is selected
@@ -16,17 +15,19 @@ const SearchHomes = ({houses}: InferGetServerSidePropsType<typeof getServerSideP
     const [selectedHome, setSelectedHome] = useState<H | undefined>()
     console.log('homes from SSR', houses)
     console.log('selected home ====>', selectedHome) 
+   
+   
+
     return(
-        <div>
+        <div style={{height: '100%'}}>
             <h2 style={{textAlign: 'center'}}>Find your future home.</h2>
             <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
                 <WrapperMap setSelectedHome={setSelectedHome} homes={houses} />
-                <div style={{ marginLeft: '40px', marginRight: '10px'}}>
+                <div style={{ marginLeft: '40px', marginRight: '10px', overflow: 'hidden'}}>
                     <h2 style={{textAlign: 'center'}}> All Homes</h2>
                     <HomeCardList homes={houses} selected={selectedHome} />
                 </div>
             </div>
-            <ScrollToTop smooth />
         </div>
     )
 

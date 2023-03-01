@@ -1,6 +1,7 @@
 import HomeCard from "./HomeCard";
 import { type H } from '../utils/houseType'
 import { useState, useEffect, useRef } from "react";
+import ScrollToTop from 'react-scroll-to-top';
 
 type CompProps = {
     homes: H[]
@@ -16,6 +17,8 @@ const HomeCardList = ({ homes, selected }: CompProps) => {
     //         }
     //     })
     // console.log('SELECTED INDEX', selectedIndex)
+    
+
     useEffect(() => {
         console.log('INDEX LIST REF',indexListRef)
         const findRef = indexListRef.current.filter((obj: any) => obj.homeId === selected?.PropertyId)
@@ -27,12 +30,14 @@ const HomeCardList = ({ homes, selected }: CompProps) => {
             console.log('Selected FINDREFFF---->>>', findRef)
             const curRef = refs.current.find((ref: any, index: number) => index === idx[0] )
             console.log("CURRENT REF TO HIGLIGHT ===>>>", curRef) 
-            curRef?.scrollIntoView({ behavior: "smooth"})
+            curRef?.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest"})
         }
     }, [selected])
 
+   
+
     return (
-        <div >
+        <div style={{width: '100%',height: '100vh', overflow: 'scroll'}} >
             {homes.map((home: H, index: number) => {
                 // set the list of indexes for the refs
                 let selectedHome = false
