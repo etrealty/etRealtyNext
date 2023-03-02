@@ -1,6 +1,6 @@
 .slideImg {
-    height: 800px;
+    height: 500px;
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
 
 }
