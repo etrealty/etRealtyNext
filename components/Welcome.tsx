@@ -3,7 +3,7 @@ const Welcome = () => {
     return (
         <div style={{background: '#DDE3DD'}}>
             <div style={{boxShadow: 'grey 8px 8px 2px 2px' ,margin: '40px',border: 'solid black 2px', borderRadius: '5px',background: '#8EA38F', color: '#DDE3DD'}}>
-                <h1 style={{textAlign: 'center'}}>
+                <h1 style={{fontSize: '58px',textAlign: 'center'}}>
                     Homeland Realty
                 </h1>
                 <p style={{textAlign: 'center'}}><i>A new home, a fresh start.</i></p>
