@@ -22,7 +22,7 @@
 
 .homesBoxDiv:hover {
     transform: scale(1.02, 1.02);
-    box-shadow: 5px 5px black;
+    box-shadow: grey 8px 8px 2px 2px;
 }
 
 
