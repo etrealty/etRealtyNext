@@ -15,6 +15,7 @@ const Slideshow = () => {
 
     return (
             <Swiper
+                style={{ border: 'solid black 2px' ,borderRadius: '8px',boxShadow: 'grey 8px 8px 2px 2px'}}
                 slidesPerView={1}
                 spaceBetween={10}
                 loop={true}
