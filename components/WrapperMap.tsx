@@ -17,7 +17,7 @@ const center = {
   lng: -94.351616
 };
 
-function WrapperMap({ setSelectedHome, homes }: any) {
+function WrapperMap({ setSelectedHome, homes, scrollToHome }: any) {
   
   const [map, setMap] = useState(null)
   const [markers, setMarkers] = useState([])
@@ -45,13 +45,19 @@ function WrapperMap({ setSelectedHome, homes }: any) {
 //console.log('initialMARKER =>', fixMarkers)
 
   const markerClicked = (marker: any, index: any, ) => {
+    console.log("====MAP=====");
     setActiveInfoWindow(index)
     const clickHome = homes.filter((h: H)=> h.Address === marker.label.text)
     //console.log('clickhome=>',clickHome[0].permalink)
     setSelectedHome(clickHome[0])
+    console.log("Selected home updated on MAP")
+    console.log(`selected on MAP = ${clickHome[0].Address}`)
+    let clickedID = clickHome[0].PropertyId;
+    scrollToHome(clickedID)
     //console.log('clickhome is ==>',clickHome)
     //console.log('markerClicked, house =>', marker.label.text)
     //console.log('marker',marker,'index',index)
+    console.log("======ENDMAP=====");
   }
 
   // create a map clicked event??
