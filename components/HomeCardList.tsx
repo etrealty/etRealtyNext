@@ -1,7 +1,6 @@
 import HomeCard from "./HomeCard";
 import { type H } from '../utils/houseType'
-import { useState, useEffect, useRef, MutableRefObject } from "react";
-import ScrollToTop from 'react-scroll-to-top';
+import { MutableRefObject } from "react";
 
 type CompProps = {
     homes: H[]
