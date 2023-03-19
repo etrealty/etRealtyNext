@@ -59,7 +59,7 @@ const HomeCard = ({ home, selected }: CompProps) => {
                 Date Listed: {format(new Date(home.ListDate !== null ? home.ListDate : '01-01-2001' ), 'MM-dd-yyyy')}
             </p>
             {selected ?
-            <div className={styles.infoDiv} style={{backgroundColor: 'silver'}}>
+            <div className={styles.infoDiv} style={{backgroundColor: '#6f8e70'}}>
                 <div className={styles.infoItem}>
                     <p>
                         {home.Beds}
