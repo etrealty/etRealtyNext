@@ -31,6 +31,9 @@ const HomeInfo = ({ property }: any) => {
                 <div className={styles.titleDiv}>
                     <div className={styles.addressDiv}>
                        <div>
+                            <span><u>Address</u></span>
+                       </div>
+                       <div>
                            <span>{home.Address}</span>
                        </div> 
                        <div>
@@ -40,6 +43,7 @@ const HomeInfo = ({ property }: any) => {
                        </div>
                     </div>
                     <div className={styles.priceDiv}>
+                        <span><u>Listed Price</u></span>
                         <span>${home.ListPrice}</span>
                     </div>
                 </div>
@@ -48,31 +52,28 @@ const HomeInfo = ({ property }: any) => {
                     {/* original image view */}
                     {/*<img className={styles.homeImg} src={home.Photos !== null ? home.Photos[0] : ' '} /> */}
                 </div>
-                <div>
+                <div className={styles.textBox}>
                     <div className={styles.descriptionDiv}>
                         <DescriptionBox home={home} />
                     </div>
                     <div className={styles.infoBox}>
-                        <p>
-                            Address: {home.Address}, {home.City}, {home.PostalCode}, {home.State}
-                        </p>
                         <p style={{display: 'flex', justifyContent: 'space-between'}}>
                             <p>Bedrooms:</p> <p>{home.Beds}</p> 
                         </p>
                         <p className={styles.infoTextBox}>
                             <p>Baths:</p><p>{home.Baths}</p> 
                         </p>
-                        <p>
-                            Sqft: {home.Sqft}
+                        <p className={styles.infoTextBox}>
+                            <p>Sqft:</p> <p>{home.Sqft}</p>
                         </p>
-                        <p>
-                            Lot Size: {home.LotSqft} SqFt
+                        <p className={styles.infoTextBox}>
+                            <p>Lot Size:</p><p>{home.LotSqft} SqFt</p> 
                         </p>
-                        <p>
-                            Date Listed: {format(new Date(home.ListDate !== null ? home.ListDate : '01/01/2001'), 'MM/dd/yyy')}
+                        <p className={styles.infoTextBox}>
+                            <p>Date Listed:</p> <p>{format(new Date(home.ListDate !== null ? home.ListDate : '01/01/2001'), 'MM/dd/yyy')}</p>
                         </p>
-                        <p>
-                            List Price: ${home.ListPrice}
+                        <p className={styles.infoTextBox}>
+                           <p>List Price:</p> <p>${home.ListPrice}</p>
                         </p>
                     </div>
                 </div>
