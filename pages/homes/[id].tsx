@@ -56,6 +56,7 @@ const HomeInfo = ({ property }: any) => {
                     <div className={styles.descriptionDiv}>
                         <DescriptionBox home={home} />
                     </div>
+                    
                     <div className={styles.infoBox}>
                         <p style={{display: 'flex', justifyContent: 'space-between'}}>
                             <p>Bedrooms:</p> <p>{home.Beds}</p> 
@@ -75,7 +76,15 @@ const HomeInfo = ({ property }: any) => {
                         <p className={styles.infoTextBox}>
                            <p>List Price:</p> <p>${home.ListPrice}</p>
                         </p>
+                        <p className={styles.infoTextBox}>
+                            <p>Status:</p> <p>{home.Status}</p>
+                        </p>
+                        <p className={styles.infoTextBox}>
+                            <p>MLS#:</p> <p>{home.ListingId}</p>
+                        </p>
                     </div>
+
+
                 </div>
 
             </div>

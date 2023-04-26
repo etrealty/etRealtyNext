@@ -38,23 +38,24 @@ const HomeCardList = ({ homes, selected, refList, refs }: CompProps) => {
         <div style={{width: '100%',height: '100vh', overflow: 'scroll'}} >
             <div style={{textAlign: 'center'}}>Homes</div>
             {homes.map((home: H, index: number) => {
-                selectedHome = false;
-                // set the list of indexes for the refs
-                const listCheck = refList.current.find((ref: any) => ref.homeId === home.PropertyId)
-                if(listCheck == undefined){
-                   // indexListRef.current.push({homeId: home.PropertyId, ind: index})
-                    refList.current.push({homeId: home.PropertyId, ind: index})
-                }
-                if(selected?.PropertyId === home.PropertyId){
-                    selectedHome = true
-                     
-                }
-                // return the homecard and div
-                return  (
-                    <div ref={(element) => {refs.current[index] = element}} key={index} >
-                        <HomeCard home={home} key={index} selected={selectedHome}/>
-                    </div>
-                )})}
+                if(home.Status === "for_sale") {
+                    selectedHome = false;
+                    // set the list of indexes for the refs
+                    const listCheck = refList.current.find((ref: any) => ref.homeId === home.PropertyId)
+                    if(listCheck == undefined){
+                       // indexListRef.current.push({homeId: home.PropertyId, ind: index})
+                        refList.current.push({homeId: home.PropertyId, ind: index})
+                    }
+                    if(selected?.PropertyId === home.PropertyId){
+                        selectedHome = true
+                         
+                    }
+                    // return the homecard and div
+                    return  (
+                        <div ref={(element) => {refs.current[index] = element}} key={index} >
+                            <HomeCard home={home} key={index} selected={selectedHome}/>
+                        </div>
+                )}})}
         </div>
 
     )

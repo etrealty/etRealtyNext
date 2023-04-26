@@ -31,6 +31,7 @@ function WrapperMap({ setSelectedHome, homes, scrollToHome }: any) {
   const initialMarkers = homes.map((h: H)=> 
   {  
       if(h === undefined) return null
+      if(h.Status === "for_sale"){
       return { 
         position: {
             lat: h.Latitude,
@@ -40,7 +41,9 @@ function WrapperMap({ setSelectedHome, homes, scrollToHome }: any) {
         draggable: false
      }
   
-  })
+  }else{
+      return null
+  }})
   const fixMarkers = initialMarkers.filter((m: any) => m !== null)
 //console.log('initialMARKER =>', fixMarkers)
 
