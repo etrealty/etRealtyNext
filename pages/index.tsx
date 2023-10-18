@@ -12,7 +12,7 @@ const Home: NextPage = () => {
   return (
     <div style={{background: '#DDE3DD'}}>
       <Head>
-        <title>Homestead Realty</title>
+        <title>Homeland Realty</title>
         <meta name="description" content="Homestead Realty Home page." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
