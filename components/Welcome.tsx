@@ -12,7 +12,7 @@ const Welcome = () => {
                 With 15+ years of experience as a Realtor, Ella Tindle and her team know real estate.
             </h3>
             <h3 style={{textAlign: 'center'}}>
-                Whether it's selling your family home or buying your dream home. Homeland Realty has the knowledge to get you the best offer. With the least amount of stress.
+                Whether it is selling your family home or buying your dream home. Homeland Realty has the knowledge to get you the best offer. With the least amount of stress.
             </h3>
         </div>
     )

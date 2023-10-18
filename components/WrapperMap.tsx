@@ -82,7 +82,8 @@ function WrapperMap({ setSelectedHome, homes, scrollToHome }: any) {
     setMap(map)
     console.log('do work for markers now and here')
     setMarkers(fixMarkers)
-  }, [])
+  // fix markers might need removed or dependecy array removed
+  }, [fixMarkers])
 
   const onUnmount = useCallback(function callback(map: any) {
     setMap(null)

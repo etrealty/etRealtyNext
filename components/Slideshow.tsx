@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper'
 import styles from '../styles/Slideshow.module.css'
 import 'swiper/css'
+import Image from 'next/image';
 
 const Slideshow = () => {
     
@@ -25,11 +26,11 @@ const Slideshow = () => {
                 }}
                 modules={[Autoplay]}
             >
-                <SwiperSlide><img className={styles.slideImg} src={imgArr[0]} /></SwiperSlide>
-                <SwiperSlide><img className={styles.slideImg} src={imgArr[1]} /></SwiperSlide>
-                <SwiperSlide><img className={styles.slideImg} src={imgArr[2]} /></SwiperSlide>
-                <SwiperSlide><img className={styles.slideImg} src={imgArr[3]} /></SwiperSlide>
-                <SwiperSlide><img className={styles.slideImg} src={imgArr[4]} /></SwiperSlide>
+                <SwiperSlide><Image className={styles.slideImg} src={imgArr[0]} /></SwiperSlide>
+                <SwiperSlide><Image className={styles.slideImg} src={imgArr[1]} /></SwiperSlide>
+                <SwiperSlide><Image className={styles.slideImg} src={imgArr[2]} /></SwiperSlide>
+                <SwiperSlide><Image className={styles.slideImg} src={imgArr[3]} /></SwiperSlide>
+                <SwiperSlide><Image className={styles.slideImg} src={imgArr[4]} /></SwiperSlide>
 
 
             </Swiper>

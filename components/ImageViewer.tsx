@@ -17,8 +17,10 @@ export default function ImgView({images, cur, open}: ImgViewProps) {
     useEffect(()=> {
         setCurImg(cur);
         //setIsOpen(open);
-    });
-   
+    },[cur]);
+// cur migght need removed or dependecy array or nextjs warning removed
+
+
     const closeImgView = () => {
         setCurImg(0);
         open(false);

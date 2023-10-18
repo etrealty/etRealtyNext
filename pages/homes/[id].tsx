@@ -7,6 +7,7 @@ import format from 'date-fns/format'
 import { type H } from '../../utils/houseType';
 import DescriptionBox from "../../components/DescriptionBox";
 import ImgView from '../../components/ImageViewer';
+import Image from 'next/image';
 
 
 
@@ -48,7 +49,7 @@ const HomeInfo = ({ property }: any) => {
                     </div>
                 </div>
             <div onClick={openImgView} className={styles.imgDiv}>
-                    {imgClicked === true ? <ImgView images={home.Photos} cur={0} open={setImgClicked} /> : <div><img className={styles.homeImg} src={home.Photos !== null ? home.Photos[0] : ' '} /></div>}
+                    {imgClicked === true ? <ImgView images={home.Photos} cur={0} open={setImgClicked} /> : <div><Image className={styles.homeImg} src={home.Photos !== null ? home.Photos[0] : ' '} alt="home" /></div>}
                     {/* original image view */}
                     {/*<img className={styles.homeImg} src={home.Photos !== null ? home.Photos[0] : ' '} /> */}
                 </div>
